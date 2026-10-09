@@ -58,14 +58,13 @@ a:hover { text-decoration: none; }
 .card p { margin: 0; color: var(--muted); }
 .card .more { margin-top: auto; font-weight: 600; text-decoration: none; }
 
-.stores { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
-.store {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: #000; color: #fff; text-decoration: none;
-  border: 1px solid #555; border-radius: 9px; padding: 8px 14px; font-size: 0.92rem; font-weight: 600;
-}
-.store:hover { border-color: var(--accent); }
-.store small { display: block; font-weight: 400; font-size: 0.7rem; opacity: 0.8; line-height: 1.1; }
+.stores { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.badge { display: inline-flex; align-items: center; line-height: 0; border-radius: 8px; }
+.badge img { display: block; width: auto; }
+.badge-as img { height: 40px; }
+/* Google's PNG includes transparent padding: 58px image ~ 40px visible badge */
+.badge-gp img { height: 58px; margin: -9px -9px; }
+.badge:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 /* Content pages */
 .page { padding: 48px 0 64px; max-width: 760px; }
