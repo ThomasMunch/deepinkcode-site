@@ -62,8 +62,7 @@ a:hover { text-decoration: none; }
 .badge { display: inline-flex; align-items: center; line-height: 0; border-radius: 8px; }
 .badge img { display: block; width: auto; }
 .badge-as img { height: 40px; }
-/* Google's PNG includes transparent padding: 58px image ~ 40px visible badge */
-.badge-gp img { height: 58px; margin: -9px -9px; }
+.badge-gp img { height: 40px; }
 .badge:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 /* Content pages */
