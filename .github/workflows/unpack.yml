@@ -1,5 +1,6 @@
 # Deploy helper: when site.tar.gz is uploaded to the repo root (e.g. via the
 # GitHub web upload), replace the whole site with its contents (.github is kept).
+# If the archive contains assets-fetch.txt, those files are downloaded too.
 name: Unpack site
 on:
   push:
@@ -18,6 +19,15 @@ jobs:
           mv site.tar.gz "$RUNNER_TEMP/site.tar.gz"
           git rm -rq --ignore-unmatch -- . ':(exclude).github'
           tar -xzf "$RUNNER_TEMP/site.tar.gz"
+          # Optional manifest: "<path> <url>" per line, downloaded then removed
+          if [ -f assets-fetch.txt ]; then
+            while read -r path url; do
+              [ -n "$path" ] || continue
+              mkdir -p "$(dirname "$path")"
+              curl -fsSL -A "Mozilla/5.0" -o "$path" "$url"
+            done < assets-fetch.txt
+            rm assets-fetch.txt
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
