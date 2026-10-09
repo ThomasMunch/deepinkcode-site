@@ -1,0 +1,36 @@
+# One-off: unpacks site.tar.gz and imports images from the old WordPress site.
+# Safe to delete after it has run once.
+name: Unpack site
+on:
+  push:
+    paths: [".github/workflows/unpack.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack
+        run: |
+          tar -xzf site.tar.gz
+          git rm -q site.tar.gz
+      - name: Import images from old site
+        run: |
+          mkdir -p assets/img
+          b=https://deepinkcode.com/wp-content/uploads
+          get() { curl -fsSL -A "Mozilla/5.0" -o "assets/img/$1" "$b/$2" || echo "failed: $2"; }
+          get logo.png 2024/01/Website-Logo-PNG.png
+          get favicon-32.png 2024/01/cropped-Website-Logo-PNG-32x32.png
+          get wordfeud-icon.jpg 2024/01/Wordfeud-Solver-GPLAY.jpg
+          get concept.png 2024/01/Concept-1-1.png
+          get phone.png 2024/04/Pink-Minimalist-Phone-Mock-up-Instagram-Post-3-1024x1024.png
+          ls -la assets/img
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Unpack site and import images from old site"
+          git push
