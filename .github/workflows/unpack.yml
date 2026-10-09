@@ -1,9 +1,9 @@
-# One-off: unpacks site.tar.gz and imports images from the old WordPress site.
-# Safe to delete after it has run once.
+# Deploy helper: when site.tar.gz is uploaded to the repo root (e.g. via the
+# GitHub web upload), replace the whole site with its contents (.github is kept).
 name: Unpack site
 on:
   push:
-    paths: [".github/workflows/unpack.yml"]
+    paths: ["site.tar.gz"]
   workflow_dispatch:
 permissions:
   contents: write
@@ -12,25 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Unpack
+      - name: Replace site with archive contents
         run: |
-          tar -xzf site.tar.gz
-          git rm -q site.tar.gz
-      - name: Import images from old site
-        run: |
-          mkdir -p assets/img
-          b=https://deepinkcode.com/wp-content/uploads
-          get() { curl -fsSL -A "Mozilla/5.0" -o "assets/img/$1" "$b/$2" || echo "failed: $2"; }
-          get logo.png 2024/01/Website-Logo-PNG.png
-          get favicon-32.png 2024/01/cropped-Website-Logo-PNG-32x32.png
-          get wordfeud-icon.jpg 2024/01/Wordfeud-Solver-GPLAY.jpg
-          get concept.png 2024/01/Concept-1-1.png
-          get phone.png 2024/04/Pink-Minimalist-Phone-Mock-up-Instagram-Post-3-1024x1024.png
-          ls -la assets/img
-      - name: Commit
-        run: |
+          test -f site.tar.gz || { echo "no site.tar.gz"; exit 0; }
+          mv site.tar.gz "$RUNNER_TEMP/site.tar.gz"
+          git rm -rq --ignore-unmatch -- . ':(exclude).github'
+          tar -xzf "$RUNNER_TEMP/site.tar.gz"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Unpack site and import images from old site"
+          git commit -m "Update site from archive" || echo "no changes"
           git push
