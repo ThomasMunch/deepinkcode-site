@@ -236,7 +236,7 @@ APPS = {
     "gp": "https://play.google.com/store/apps/details?id=com.deepinkcode.wordfeudsolver",
     "as": "https://apps.apple.com/app/wordfeud-solver/id6754640376",
     "video": "SkoLrsQ0rak",
-    "shots_localized": {"da": "wordfeud-da"},
+    "shots_localized": {"da": "wordfeud-da", "nl": "wordfeud-nl", "sv": "wordfeud-sv", "no": "wordfeud-no"},
     "game": "Wordfeud",
     "en": {
       "title": "Wordfeud Solver – Find the Best Word from a Screenshot",
