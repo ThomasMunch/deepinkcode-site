@@ -176,3 +176,9 @@ a:hover { text-decoration: none; }
 .faq-item h3 { font-size: 1.05rem; margin: 0 0 4px; }
 .faq-item p { margin: 0; color: var(--muted); }
 .more-apps ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px 24px; }
+
+/* Language switcher */
+.langs { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.nav .langs a { padding: 1px 7px; font-size: 0.82rem; letter-spacing: 0.03em; }
+.nav .langs a + a { border-left: 1px solid var(--line); }
+.nav .langs a[aria-current="true"] { color: var(--bg); background: var(--accent); font-weight: 700; }

@@ -2,72 +2,227 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://deepinkcode.com/</loc>
-    <lastmod>2026-10-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/"/>
     <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/"/>
   </url>
   <url>
     <loc>https://deepinkcode.com/da/</loc>
-    <lastmod>2026-10-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/"/>
     <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/nl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/sv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/no/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/"/>
   </url>
   <url>
     <loc>https://deepinkcode.com/wordfeud-solver/</loc>
-    <lastmod>2026-10-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/wordfeud-solver/"/>
     <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/wordfeud-solver/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/wordfeud-solver/"/>
   </url>
   <url>
     <loc>https://deepinkcode.com/da/wordfeud-solver/</loc>
-    <lastmod>2026-10-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/wordfeud-solver/"/>
     <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/wordfeud-solver/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/nl/wordfeud-solver/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/wordfeud-solver/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/sv/wordfeud-solver/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/wordfeud-solver/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/no/wordfeud-solver/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/wordfeud-solver/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/wordfeud-solver/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/wordfeud-solver/"/>
   </url>
   <url>
     <loc>https://deepinkcode.com/words-with-friends-solver/</loc>
-    <lastmod>2026-10-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/words-with-friends-solver/"/>
     <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/words-with-friends-solver/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/words-with-friends-solver/"/>
   </url>
   <url>
     <loc>https://deepinkcode.com/da/words-with-friends-solver/</loc>
-    <lastmod>2026-10-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/words-with-friends-solver/"/>
     <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/words-with-friends-solver/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/nl/words-with-friends-solver/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/words-with-friends-solver/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/sv/words-with-friends-solver/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/words-with-friends-solver/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/no/words-with-friends-solver/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/words-with-friends-solver/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/words-with-friends-solver/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/words-with-friends-solver/"/>
   </url>
   <url>
     <loc>https://deepinkcode.com/scrabble-go-cheat/</loc>
-    <lastmod>2026-10-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/scrabble-go-cheat/"/>
     <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/scrabble-go-cheat/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/scrabble-go-cheat/"/>
   </url>
   <url>
     <loc>https://deepinkcode.com/da/scrabble-go-cheat/</loc>
-    <lastmod>2026-10-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/scrabble-go-cheat/"/>
     <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/scrabble-go-cheat/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/nl/scrabble-go-cheat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/scrabble-go-cheat/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/sv/scrabble-go-cheat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/scrabble-go-cheat/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/no/scrabble-go-cheat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/scrabble-go-cheat/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/scrabble-go-cheat/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/scrabble-go-cheat/"/>
   </url>
   <url>
     <loc>https://deepinkcode.com/support/</loc>
-    <lastmod>2026-10-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/support/"/>
     <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/support/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/support/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/support/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/support/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/support/"/>
   </url>
   <url>
     <loc>https://deepinkcode.com/da/support/</loc>
-    <lastmod>2026-10-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/support/"/>
     <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/support/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/support/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/support/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/support/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/nl/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/support/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/support/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/support/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/support/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/support/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/sv/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/support/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/support/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/support/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/support/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/support/"/>
+  </url>
+  <url>
+    <loc>https://deepinkcode.com/no/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deepinkcode.com/support/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://deepinkcode.com/da/support/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://deepinkcode.com/nl/support/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://deepinkcode.com/sv/support/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://deepinkcode.com/no/support/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://deepinkcode.com/support/"/>
   </url>
   <url><loc>https://deepinkcode.com/privacy-policy-website/</loc></url>
