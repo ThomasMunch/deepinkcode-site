@@ -262,7 +262,7 @@ def patch_privacy():
 
 def patch_css_links():
     """Point the hand-written pages at the current cache-busted stylesheet."""
-    for rel in ["404.html", "privacy-policy-website/index.html", "da/privatlivspolitik/index.html"]:
+    for rel in ["404.html", "privacy-policy-website/index.html", "da/privatlivspolitik/index.html", "terms-of-use/index.html"]:
         p = os.path.join(ROOT, rel)
         html = open(p, encoding="utf-8").read()
         html = re.sub(r'href="/assets/style\.css(\?v=[0-9a-f]+)?"', f'href="{CSS_HREF}"', html)
@@ -278,7 +278,8 @@ def build_sitemap():
             out += [f'    <xhtml:link rel="alternate" hreflang="{LANGS[l]["html"]}" href="{BASE}{url(l, p)}"/>' for l in LANG_ORDER]
             out += [f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE}{url("en", p)}"/>', "  </url>"]
     out += [f"  <url><loc>{BASE}/privacy-policy-website/</loc></url>",
-            f"  <url><loc>{BASE}/da/privatlivspolitik/</loc></url>", "</urlset>"]
+            f"  <url><loc>{BASE}/da/privatlivspolitik/</loc></url>",
+            f"  <url><loc>{BASE}/terms-of-use/</loc></url>", "</urlset>"]
     open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(out) + "\n")
 
 if __name__ == "__main__":
