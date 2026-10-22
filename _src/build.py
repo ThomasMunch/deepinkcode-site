@@ -20,7 +20,7 @@ _css = open(os.path.join(ROOT, "assets", "style.css"), "rb").read().replace(b"\r
 CSS_HREF = "/assets/style.css?v=" + hashlib.md5(_css).hexdigest()[:8]
 # App Store Connect provider token (App Analytics → Sources → Campaigns → Generate link, the "pt=" value).
 # Empty = App Store links are left untagged.
-APPLE_PT = ""
+APPLE_PT = "126958435"
 
 def e(s):
     return escape(s, quote=True)
