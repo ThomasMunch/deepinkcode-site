@@ -122,13 +122,25 @@ def build_home(lang):
     <a class="more" href="{url(lang, slug + '/')}">{L['read_more']}</a>
   </article>
 """
+    tiles = "".join(f'<span class="tile">{ch}<sub>{pt}</sub></span>' for ch, pt in
+                    [("S", 1), ("O", 1), ("L", 1), ("V", 4), ("E", 1), ("R", 1)])
+    chips = "".join(f"<li>{e(c)}</li>" for c in H["chips"])
     html = head(lang, H["title"], H["desc"], "", "/assets/img/phone.webp", ld) + header(lang, "", "apps") + f"""<main class="wrap">
 <section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-text">
-  <h1>{e(H['h1'])}</h1>
+  <div class="tiles" aria-hidden="true">{tiles}</div>
+  <h1>{e(H['h1a'])} <span class="grad">{e(H['h1b'])}</span></h1>
   <p>{e(H['lead'])}</p>
+  <ul class="chips">{chips}</ul>
+  <a class="cta" href="#apps">{e(H['cta'])} <span aria-hidden="true">↓</span></a>
   </div>
-  <img class="hero-img" src="/assets/img/phone.webp" alt="{e(H['hero_alt'])}" width="360" height="360">
+  <div class="hero-visual">
+    <span class="float-tile ft1" aria-hidden="true">W<sub>4</sub></span>
+    <span class="float-tile ft2" aria-hidden="true">S<sub>1</sub></span>
+    <span class="float-tile ft3" aria-hidden="true">Q<sub>10</sub></span>
+    <img class="hero-img" src="/assets/img/phone.webp" alt="{e(H['hero_alt'])}" width="360" height="360">
+  </div>
 </section>
 <section class="apps" id="apps">
 {cards}</section>
