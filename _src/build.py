@@ -18,6 +18,9 @@ SHOT_W = {"wordfeud": 462, "wwf": 462, "scrabble": 460}
 # Cache-busting: the query changes whenever style.css changes (line endings normalised so Windows and Linux agree).
 _css = open(os.path.join(ROOT, "assets", "style.css"), "rb").read().replace(b"\r\n", b"\n")
 CSS_HREF = "/assets/style.css?v=" + hashlib.md5(_css).hexdigest()[:8]
+# App Store Connect provider token (App Analytics → Sources → Campaigns → Generate link, the "pt=" value).
+# Empty = App Store links are left untagged.
+APPLE_PT = ""
 
 def e(s):
     return escape(s, quote=True)
@@ -34,7 +37,7 @@ def lang_switch(cur, paths):
                      f'title="{LANGS[l]["name"]}"{cur_attr}>{l.upper()}</a>')
     return '<span class="langs">' + "".join(links) + "</span>"
 
-def head(lang, title, desc, path, image, ld=None):
+def head(lang, title, desc, path, image, ld=None, app_store=None):
     L = LANGS[lang]
     alts = "".join(f'<link rel="alternate" hreflang="{LANGS[l]["html"]}" href="{BASE}{url(l, path)}">\n'
                    for l in LANG_ORDER)
@@ -56,6 +59,9 @@ def head(lang, title, desc, path, image, ld=None):
 <meta property="og:locale" content="{L['og']}">
 <meta name="twitter:card" content="summary_large_image">
 """
+    if app_store:
+        # Safari's Smart App Banner on iPhone
+        out += f'<meta name="apple-itunes-app" content="app-id={re.search(r"id(\d+)", app_store).group(1)}">\n'
     if ld:
         out += '<script type="application/ld+json">\n' + json.dumps(ld, ensure_ascii=False, indent=1) + "\n</script>\n"
     out += f"""<link rel="stylesheet" href="{CSS_HREF}">
@@ -96,13 +102,25 @@ def footer(lang, script=False):
 </html>
 """
 
-def badges(lang, app):
+def store_links(lang, app, page):
+    """Store URLs tagged with the language and page type, e.g. campaign "nl-app".
+    Google Play: see Play Console → Statistics → User acquisition (UTM).
+    App Store: see App Analytics → Sources → Campaigns; only works once APPLE_PT is set."""
+    campaign = f"{lang}-{page}"
+    gp = app["gp"] + f"&referrer=utm_source%3Ddeepinkcode.com%26utm_medium%3Dwebsite%26utm_campaign%3D{campaign}"
+    as_ = app["as"]
+    if as_ and APPLE_PT:
+        as_ += f"?pt={APPLE_PT}&ct=web-{campaign}&mt=8"
+    return gp, as_
+
+def badges(lang, app, page):
     L = LANGS[lang]
     f, alt, w = L["gp_badge"]
-    out = (f'<a class="badge badge-gp" href="{app["gp"]}" rel="noopener"><img src="/assets/img/badges/{f}" '
+    gp, as_ = store_links(lang, app, page)
+    out = (f'<a class="badge badge-gp" href="{e(gp)}" rel="noopener"><img src="/assets/img/badges/{f}" '
            f'alt="{e(alt)}" width="{w}" height="40"></a>')
-    if app["as"]:
-        out += (f'<a class="badge badge-as" href="{app["as"]}" rel="noopener"><img src="/assets/img/badges/app-store.svg" '
+    if as_:
+        out += (f'<a class="badge badge-as" href="{e(as_)}" rel="noopener"><img src="/assets/img/badges/app-store.svg" '
                 f'alt="{e(L["as_alt"])}" width="120" height="40"></a>')
     return f'<div class="stores">{out}</div>'
 
@@ -122,7 +140,7 @@ def build_home(lang):
         cards += f"""  <article class="card card-{a['cls']}">
     <div class="card-head"><img src="/assets/img/apps/{a['img']}-icon.webp" alt="" width="64" height="64"><h2>{a['name']}</h2></div>
     <p>{e(a[lang]['tagline'])}</p>
-    {badges(lang, a)}
+    {badges(lang, a, "home")}
     <a class="more" href="{url(lang, slug + '/')}">{L['read_more']}</a>
   </article>
 """
@@ -185,13 +203,13 @@ def build_app(lang, slug):
     others = "\n".join(f'      <li><a href="{url(lang, s + "/")}">{APPS[s]["name"]}</a></li>'
                        for s in APP_ORDER if s != slug)
     note = f'\n    <p class="note">{e(c["note"])}</p>' if c["note"] else "\n    "
-    html = head(lang, c["title"], c["desc"], path, f"/assets/img/apps/{shot_base}-1.webp", ld) + header(lang, path, None) + f"""<main class="wrap app app-{a['cls']}">
+    html = head(lang, c["title"], c["desc"], path, f"/assets/img/apps/{shot_base}-1.webp", ld, a["as"]) + header(lang, path, None) + f"""<main class="wrap app app-{a['cls']}">
 <section class="app-hero">
   <img class="app-icon" src="/assets/img/apps/{a['img']}-icon.webp" alt="{a['name']} {L['icon']}" width="128" height="128">
   <div>
     <h1>{a['name']}</h1>
     <p class="tagline">{e(c['tagline'])}</p>
-    {badges(lang, a)}{note}
+    {badges(lang, a, "app")}{note}
   </div>
 </section>
 <p class="lead app-intro">{e(c['intro'])}</p>
