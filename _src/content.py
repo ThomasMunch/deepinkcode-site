@@ -85,7 +85,7 @@ LANGS = {
 HOME = {
     "en": {
         "title": "DeepInkCode – Wordfeud, Words With Friends & Scrabble GO solvers",
-        "desc": "DeepInkCode makes ad-free solver apps for the Scrabble-style games Wordfeud, Words With Friends and Scrabble GO. Take a screenshot, and the app finds the highest-scoring moves for you.",
+        "desc": "Ad-free solver apps for the Scrabble-style games Wordfeud, Words With Friends and Scrabble GO. Take a screenshot, and the app finds the highest-scoring moves.",
         "h1": "Word game solvers that read your board",
         "lead": "DeepInkCode makes ad-free solver apps for the Scrabble-style games Wordfeud, Words With Friends and Scrabble GO. Take a screenshot, and the app finds the highest-scoring moves for you.",
         "hero_alt": "Wordfeud Solver on a phone",
@@ -96,7 +96,7 @@ HOME = {
     },
     "da": {
         "title": "DeepInkCode – Wordfeud, Words With Friends & Scrabble GO solvers",
-        "desc": "DeepInkCode laver reklamefri solver-apps til scrabble-spillene Wordfeud, Words With Friends og Scrabble GO. Tag et skærmbillede, og appen finder de træk, der giver flest point.",
+        "desc": "Reklamefri solver-apps til scrabble-spillene Wordfeud, Words With Friends og Scrabble GO. Tag et skærmbillede, og appen finder de træk, der giver flest point.",
         "h1": "Ordspil-hjælpere, der læser dit bræt",
         "lead": "DeepInkCode laver reklamefri solver-apps til scrabble-spillene Wordfeud, Words With Friends og Scrabble GO. Tag et skærmbillede, og appen finder de træk, der giver flest point.",
         "hero_alt": "Wordfeud Solver på en telefon",
@@ -107,7 +107,7 @@ HOME = {
     },
     "nl": {
         "title": "DeepInkCode – Wordfeud hulp, Words With Friends & Scrabble GO",
-        "desc": "DeepInkCode maakt advertentievrije hulp-apps voor de scrabble-spellen Wordfeud, Words With Friends en Scrabble GO. Maak een screenshot en de app vindt de zetten met de meeste punten.",
+        "desc": "Advertentievrije hulp-apps voor scrabble-spellen als Wordfeud, Words With Friends en Scrabble GO. Maak een screenshot en de app vindt de beste zetten.",
         "h1": "Woordspel-hulp die je bord leest",
         "lead": "DeepInkCode maakt advertentievrije hulp-apps voor de scrabble-spellen Wordfeud, Words With Friends en Scrabble GO. Maak een screenshot en de app vindt de zetten met de meeste punten.",
         "hero_alt": "Wordfeud Solver op een telefoon",
@@ -118,7 +118,7 @@ HOME = {
     },
     "sv": {
         "title": "DeepInkCode – Wordfeud-hjälp, Words With Friends & Scrabble GO",
-        "desc": "DeepInkCode gör reklamfria hjälpappar för scrabble-spelen Wordfeud, Words With Friends och Scrabble GO. Ta en skärmbild så hittar appen dragen som ger flest poäng.",
+        "desc": "Reklamfria hjälpappar för scrabble-spelen Wordfeud, Words With Friends och Scrabble GO. Ta en skärmbild så hittar appen dragen som ger flest poäng.",
         "h1": "Ordspelshjälp som läser din spelplan",
         "lead": "DeepInkCode gör reklamfria hjälpappar för scrabble-spelen Wordfeud, Words With Friends och Scrabble GO. Ta en skärmbild så hittar appen dragen som ger flest poäng.",
         "hero_alt": "Wordfeud Solver på en mobil",
@@ -129,7 +129,7 @@ HOME = {
     },
     "no": {
         "title": "DeepInkCode – Wordfeud-hjelp, Words With Friends & Scrabble GO",
-        "desc": "DeepInkCode lager reklamefrie hjelpeapper for scrabble-spillene Wordfeud, Words With Friends og Scrabble GO. Ta et skjermbilde, så finner appen trekkene som gir flest poeng.",
+        "desc": "Reklamefrie hjelpeapper for scrabble-spillene Wordfeud, Words With Friends og Scrabble GO. Ta et skjermbilde, så finner appen trekkene som gir flest poeng.",
         "h1": "Ordspillhjelp som leser brettet ditt",
         "lead": "DeepInkCode lager reklamefrie hjelpeapper for scrabble-spillene Wordfeud, Words With Friends og Scrabble GO. Ta et skjermbilde, så finner appen trekkene som gir flest poeng.",
         "hero_alt": "Wordfeud Solver på en mobil",

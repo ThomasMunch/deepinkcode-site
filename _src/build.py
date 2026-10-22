@@ -2,9 +2,10 @@
 
 Usage:  python3 _src/build.py      (run from the repo root or anywhere)
 Text lives in _src/content.py. Privacy pages are hand-written; this script only
-updates their language switcher. Jekyll ignores this folder (leading underscore).
+updates their language switcher and stylesheet link (also in 404.html).
+Jekyll ignores this folder (leading underscore).
 """
-import json, os, re, sys
+import hashlib, json, os, re, sys
 from html import escape
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -14,6 +15,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://deepinkcode.com"
 YEAR = "2026"
 SHOT_W = {"wordfeud": 462, "wwf": 462, "scrabble": 460}
+# Cache-busting: the query changes whenever style.css changes (line endings normalised so Windows and Linux agree).
+_css = open(os.path.join(ROOT, "assets", "style.css"), "rb").read().replace(b"\r\n", b"\n")
+CSS_HREF = "/assets/style.css?v=" + hashlib.md5(_css).hexdigest()[:8]
 
 def e(s):
     return escape(s, quote=True)
@@ -54,7 +58,7 @@ def head(lang, title, desc, path, image, ld=None):
 """
     if ld:
         out += '<script type="application/ld+json">\n' + json.dumps(ld, ensure_ascii=False, indent=1) + "\n</script>\n"
-    out += """<link rel="stylesheet" href="/assets/style.css">
+    out += f"""<link rel="stylesheet" href="{CSS_HREF}">
 <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 </head>
@@ -256,6 +260,14 @@ def patch_privacy():
         html = re.sub(r'<a class="lang"[^>]*>[^<]*</a>|<span class="langs">.*?</span>', lambda m: lang_switch(lang, paths), html, count=1)
         open(p, "w", encoding="utf-8").write(html)
 
+def patch_css_links():
+    """Point the hand-written pages at the current cache-busted stylesheet."""
+    for rel in ["404.html", "privacy-policy-website/index.html", "da/privatlivspolitik/index.html"]:
+        p = os.path.join(ROOT, rel)
+        html = open(p, encoding="utf-8").read()
+        html = re.sub(r'href="/assets/style\.css(\?v=[0-9a-f]+)?"', f'href="{CSS_HREF}"', html)
+        open(p, "w", encoding="utf-8").write(html)
+
 def build_sitemap():
     paths = [""] + [s + "/" for s in APP_ORDER] + ["support/"]
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
@@ -276,5 +288,6 @@ if __name__ == "__main__":
         for slug in APP_ORDER:
             build_app(lang, slug)
     patch_privacy()
+    patch_css_links()
     build_sitemap()
     print("built", len(LANG_ORDER) * (2 + len(APP_ORDER)), "pages")
