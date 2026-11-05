@@ -9,7 +9,7 @@ import hashlib, json, os, re, sys
 from html import escape
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from content import LANG_ORDER, LANGS, HOME, SUPPORT, FEATURES, PRIVACY_FAQ, PRICE_FAQ, APP_ORDER, APPS
+from content import LANG_ORDER, LANGS, HOME, SUPPORT, FEATURES, PRIVACY_FAQ, PRICE_FAQ, APP_ORDER, APPS, GAFFERGRID
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://deepinkcode.com"
@@ -81,6 +81,7 @@ def header(lang, path, current):
     <a class="brand" href="{url(lang, '')}"><img src="/assets/img/logo.webp" alt="" width="36" height="36"><span>DEEP<b>INK</b>CODE</span></a>
     <nav class="nav">
       <a href="{url(lang, '#apps')}"{cur('apps')}>{L['nav_apps']}</a>
+      <a href="{GAFFERGRID[lang]['url']}" rel="noopener">GafferGrid</a>
       <a href="{url(lang, 'support/')}"{cur('support')}>{L['nav_support']}</a>
       <a href="{L['privacy_url']}">{L['nav_privacy']}</a>
       {lang_switch(lang, paths)}
@@ -147,6 +148,32 @@ def build_home(lang):
     tiles = "".join(f'<span class="tile">{ch}<sub>{pt}</sub></span>' for ch, pt in
                     [("S", 1), ("O", 1), ("L", 1), ("V", 4), ("E", 1), ("R", 1)])
     chips = "".join(f"<li>{e(c)}</li>" for c in H["chips"])
+    G = GAFFERGRID[lang]
+    gg_chips = "".join(f"<li>{e(c)}</li>" for c in G["chips"])
+    gaffergrid = f"""<section class="gg" id="gaffergrid" aria-labelledby="gg-title">
+  <div class="gg-text">
+    <p class="gg-eyebrow">{e(G['eyebrow'])}</p>
+    <div class="gg-head"><img src="/assets/img/apps/gaffergrid-icon.svg" alt="" width="56" height="56"><h2 id="gg-title">GafferGrid</h2></div>
+    <p class="gg-tagline">{e(G['tagline'])}</p>
+    <p class="gg-body">{e(G['text'])}</p>
+    <ul class="gg-chips">{gg_chips}</ul>
+    <a class="gg-cta" href="{G['url']}" rel="noopener">{e(G['cta'])} <span aria-hidden="true">↗</span></a>
+    <p class="gg-status">{e(G['status'])}</p>
+  </div>
+  <div class="gg-visual" aria-hidden="true">
+    <svg viewBox="0 0 480 300" width="480" height="300">
+      <defs><linearGradient id="gg-beam" x1="0" x2="1"><stop offset="0" stop-color="#b4a386" stop-opacity=".75"/><stop offset="1" stop-color="#b4a386" stop-opacity="0"/></linearGradient></defs>
+      <rect x="6" y="6" width="468" height="288" rx="3" fill="#101114" stroke="#e8e8ea" stroke-width="4"/>
+      <path d="M92 150 L474 8 V292 Z" fill="url(#gg-beam)"/>
+      <circle cx="92" cy="150" r="110" fill="none" stroke="#fff" stroke-opacity=".14" stroke-dasharray="2 6"/>
+      <circle cx="92" cy="150" r="220" fill="none" stroke="#fff" stroke-opacity=".14" stroke-dasharray="2 6"/>
+      <path d="M66 134 H90 V166 H66 Z M90 150 L104 134 V166 Z" fill="#101114" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+      <ellipse cx="312" cy="150" rx="13" ry="22" fill="none" stroke="#fff" stroke-width="2"/>
+      <circle cx="312" cy="150" r="10" fill="none" stroke="#fff" stroke-width="2"/>
+    </svg>
+  </div>
+</section>
+"""
     html = head(lang, H["title"], H["desc"], "", "/assets/img/phone.webp", ld) + header(lang, "", "apps") + f"""<main class="wrap">
 <section class="hero">
   <div class="hero-bg" aria-hidden="true"></div>
@@ -166,7 +193,7 @@ def build_home(lang):
 </section>
 <section class="apps" id="apps">
 {cards}</section>
-</main>
+{gaffergrid}</main>
 """ + footer(lang)
     write(lang, "", html)
 

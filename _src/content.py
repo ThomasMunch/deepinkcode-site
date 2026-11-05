@@ -140,6 +140,55 @@ HOME = {
     },
 }
 
+# GafferGrid band on the home page. "status" is the one line to change when the app launches.
+GAFFERGRID = {
+    "en": {
+        "url": "https://gaffergrid.com/",
+        "eyebrow": "New from DeepInkCode",
+        "tagline": "Framing, lighting, power. Sorted before call time.",
+        "text": "We don't only make word game apps. GafferGrid is a lighting and power planner for film crews: plan the shot, the light and the power on your Mac, and have the gear list ready as a PDF.",
+        "chips": ["Light from wattage and distance", "Gear and pack lists as PDF", "No login, works offline"],
+        "status": "Coming to the Mac App Store in November 2026",
+        "cta": "Visit gaffergrid.com",
+    },
+    "da": {
+        "url": "https://gaffergrid.com/da/",
+        "eyebrow": "Nyt fra DeepInkCode",
+        "tagline": "Framing, lys og strøm. Klar før mødetid.",
+        "text": "Vi laver ikke kun ordspil-apps. GafferGrid er en lysplan og strømberegner til filmhold: Planlæg shots, lys og strøm på din Mac, og hav grejlisten klar som PDF.",
+        "chips": ["Lys ud fra watt og afstand", "Grej- og pakkelister som PDF", "Uden login, virker offline"],
+        "status": "Kommer på Mac App Store i november 2026",
+        "cta": "Besøg gaffergrid.com",
+    },
+    "nl": {
+        "url": "https://gaffergrid.com/",
+        "eyebrow": "Nieuw van DeepInkCode",
+        "tagline": "Framing, licht en stroom. Geregeld vóór de draaidag.",
+        "text": "We maken niet alleen apps voor woordspellen. GafferGrid is een licht- en stroomplanner voor filmploegen: plan het shot, het licht en de stroom op je Mac en heb de materiaallijst klaar als pdf.",
+        "chips": ["Licht op basis van wattage en afstand", "Materiaal- en paklijsten als pdf", "Geen login, werkt offline"],
+        "status": "Binnenkort in de Mac App Store, november 2026 · Website in het Engels",
+        "cta": "Bezoek gaffergrid.com",
+    },
+    "sv": {
+        "url": "https://gaffergrid.com/",
+        "eyebrow": "Nytt från DeepInkCode",
+        "tagline": "Bild, ljus och ström. Klart före inspelningsstart.",
+        "text": "Vi gör inte bara appar för ordspel. GafferGrid är en ljus- och strömplanerare för filmteam: planera bilden, ljuset och strömmen på din Mac och ha utrustningslistan klar som pdf.",
+        "chips": ["Ljus utifrån watt och avstånd", "Utrustnings- och packlistor som pdf", "Ingen inloggning, fungerar offline"],
+        "status": "Kommer till Mac App Store i november 2026 · Webbplatsen är på engelska",
+        "cta": "Besök gaffergrid.com",
+    },
+    "no": {
+        "url": "https://gaffergrid.com/",
+        "eyebrow": "Nytt fra DeepInkCode",
+        "tagline": "Bilde, lys og strøm. Klart før oppmøte.",
+        "text": "Vi lager ikke bare apper for ordspill. GafferGrid er en lys- og strømplanlegger for filmteam: planlegg bildet, lyset og strømmen på din Mac, og ha utstyrslisten klar som PDF.",
+        "chips": ["Lys ut fra watt og avstand", "Utstyrs- og pakkelister som PDF", "Ingen innlogging, virker offline"],
+        "status": "Kommer til Mac App Store i november 2026 · Nettstedet er på engelsk",
+        "cta": "Besøk gaffergrid.com",
+    },
+}
+
 SUPPORT = {
     "en": {
         "title": "Support – DeepInkCode", "desc": "Contact DeepInkCode support.",

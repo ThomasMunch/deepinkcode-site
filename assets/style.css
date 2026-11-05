@@ -231,6 +231,33 @@ body { overflow-x: clip; }
 .ft2 { bottom: 14%; left: 2%; transform: rotate(8deg); animation-delay: -2s; }
 .ft3 { top: 18%; right: -4%; transform: rotate(14deg); animation-delay: -4s;
   background: linear-gradient(180deg, #ffe7b3, #f5a623); box-shadow: 0 3px 0 #c47f10, 0 8px 18px rgba(0,0,0,.35); }
+/* GafferGrid band: its own graphite look, so it reads as a different product */
+.gg {
+  display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center;
+  margin: 0 0 64px; padding: 40px; border-radius: 18px;
+  background: linear-gradient(180deg, #1a1b1f, #0b0c0e); border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 24px 60px rgba(0,0,0,.35); color: #f3f3f5;
+}
+.gg-eyebrow { margin: 0 0 14px; font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #cdbd9f; }
+.gg-head { display: flex; align-items: center; gap: 14px; }
+.gg-head img { width: 56px; height: 56px; flex: none; }
+.gg-head h2 { margin: 0; font-size: 1.9rem; letter-spacing: -.01em; line-height: 1.1; }
+.gg-tagline { margin: 14px 0 8px; font-size: 1.15rem; font-weight: 600; }
+.gg-body { margin: 0; color: rgba(243,243,245,.72); }
+.gg-chips { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.gg-chips li { font-size: .85rem; padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); color: rgba(243,243,245,.86); }
+.gg-cta {
+  display: inline-block; margin-top: 22px; padding: 11px 22px; border-radius: 999px;
+  background: #f3f3f5; color: #17181b; font-weight: 700; text-decoration: none;
+}
+.gg-cta:hover { background: #fff; }
+.gg-cta:focus-visible { outline: 3px solid #cdbd9f; outline-offset: 3px; }
+.gg-status { margin: 12px 0 0; font-size: .88rem; color: rgba(243,243,245,.62); }
+.gg-visual svg { display: block; width: 100%; height: auto; }
+@media (max-width: 720px) {
+  .gg { grid-template-columns: 1fr; gap: 24px; padding: 24px 20px; margin-bottom: 40px; }
+  .gg-visual { order: -1; }
+}
 @keyframes bob { 50% { translate: 0 -8px; } }
 @media (prefers-reduced-motion: reduce) { .float-tile { animation: none; } }
 @media (max-width: 720px) {
