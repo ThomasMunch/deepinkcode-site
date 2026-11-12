@@ -37,8 +37,6 @@ a:hover { text-decoration: none; }
   font-weight: 800; letter-spacing: -0.01em; font-size: 1.25rem;
   color: #fff; text-decoration: none;
 }
-.brand .b-deep { color: #0187ae; }
-.brand .b-code { color: #d9a04b; }
 .nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.95rem; }
 .nav a { color: var(--muted); text-decoration: none; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--text); }
@@ -85,7 +83,8 @@ a:hover { text-decoration: none; }
 
 /* Images */
 .brand { display: inline-flex; align-items: center; gap: 10px; }
-.brand img { display: block; }
+.brand img { display: block; height: 58px; width: auto; }
+@media (max-width: 480px) { .brand img { height: 46px; } }
 .hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; }
 .hero-img { width: 100%; max-width: 360px; height: auto; justify-self: center; }
 @media (max-width: 720px) {

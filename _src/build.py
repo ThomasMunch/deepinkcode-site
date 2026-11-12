@@ -79,7 +79,7 @@ def header(lang, path, current):
     paths = {l: url(l, path) for l in LANG_ORDER}
     return f"""<header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{url(lang, '')}"><img src="/assets/img/logo.svg" alt="" width="40" height="40"><span class="brand-name"><span class="b-deep">Deep</span>Ink<span class="b-code">Code</span></span></a>
+    <a class="brand" href="{url(lang, '')}"><img src="/assets/img/logo-wide.svg" alt="DeepInkCode" width="222" height="58"></a>
     <nav class="nav">
       <a href="{url(lang, '#apps')}"{cur('apps')}>{L['nav_apps']}</a>
       <a href="{GAFFERGRID[lang]['url']}" rel="noopener">GafferGrid</a>
