@@ -65,7 +65,8 @@ def head(lang, title, desc, path, image, ld=None, app_store=None):
     if ld:
         out += '<script type="application/ld+json">\n' + json.dumps(ld, ensure_ascii=False, indent=1) + "\n</script>\n"
     out += f"""<link rel="stylesheet" href="{CSS_HREF}">
-<link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 </head>
 <body>
@@ -78,7 +79,7 @@ def header(lang, path, current):
     paths = {l: url(l, path) for l in LANG_ORDER}
     return f"""<header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{url(lang, '')}"><img src="/assets/img/logo.webp" alt="" width="36" height="36"><span>DEEP<b>INK</b>CODE</span></a>
+    <a class="brand" href="{url(lang, '')}"><img src="/assets/img/logo.svg" alt="" width="40" height="40"><span class="brand-name"><span class="b-deep">Deep</span>Ink<span class="b-code">Code</span></span></a>
     <nav class="nav">
       <a href="{url(lang, '#apps')}"{cur('apps')}>{L['nav_apps']}</a>
       <a href="{GAFFERGRID[lang]['url']}" rel="noopener">GafferGrid</a>
@@ -134,7 +135,7 @@ def write(lang, path, html):
 def build_home(lang):
     H, L = HOME[lang], LANGS[lang]
     ld = {"@context": "https://schema.org", "@type": "Organization", "name": "DeepInkCode",
-          "url": BASE + "/", "logo": BASE + "/assets/img/logo.webp", "email": "support@deepinkcode.com"}
+          "url": BASE + "/", "logo": BASE + "/assets/img/logo.png", "email": "support@deepinkcode.com"}
     cards = ""
     for slug in APP_ORDER:
         a = APPS[slug]
@@ -174,7 +175,7 @@ def build_home(lang):
   </div>
 </section>
 """
-    html = head(lang, H["title"], H["desc"], "", "/assets/img/phone.webp", ld) + header(lang, "", "apps") + f"""<main class="wrap">
+    html = head(lang, H["title"], H["desc"], "", "/assets/img/og-image.png", ld) + header(lang, "", "apps") + f"""<main class="wrap">
 <section class="hero">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-text">
@@ -281,7 +282,7 @@ def build_app(lang, slug):
 def build_support(lang):
     S = SUPPORT[lang]
     items = "\n".join(f"  <li>{e(i)}</li>" for i in S["items"])
-    html = head(lang, S["title"], S["desc"], "support/", "/assets/img/phone.webp") + header(lang, "support/", "support") + f"""<main class="wrap">
+    html = head(lang, S["title"], S["desc"], "support/", "/assets/img/og-image.png") + header(lang, "support/", "support") + f"""<main class="wrap">
 <article class="page">
 <h1>{e(S['h1'])}</h1>
 <p class="lead">{e(S['lead'])}</p>
