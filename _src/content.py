@@ -258,27 +258,27 @@ FEATURES = {
            "Solutions ranked by points, with exact placement",
            "Shows how many tiles are left in the game in total – in the bag plus on your opponent’s rack",
            "Up-to-date dictionaries", "No ads",
-           "Free to try, with Pro Lifetime and Pro Subscription upgrades"],
+           "Free to use for as long as you like – Pro also shows the top 6 words"],
     "da": ["Læser brættet automatisk fra et skærmbillede (OCR)",
            "Løsninger sorteret efter point, med præcis placering",
            "Viser hvor mange brikker der er tilbage i spillet i alt – i posen plus hos modstanderen",
            "Opdaterede ordbøger", "Ingen reklamer",
-           "Gratis at prøve, med Pro Lifetime og Pro-abonnement"],
+           "Gratis at bruge, så længe du vil – Pro viser også de 6 bedste ord"],
     "nl": ["Leest het bord automatisch uit een screenshot (OCR)",
            "Oplossingen gesorteerd op punten, met de exacte plek op het bord",
            "Laat zien hoeveel letters er in totaal nog over zijn – in de zak plus op het rekje van je tegenstander",
            "Actuele woordenlijsten", "Geen advertenties",
-           "Gratis te proberen, met Pro Lifetime en Pro-abonnement"],
+           "Gratis te gebruiken zo lang je wilt – Pro toont ook de 6 beste woorden"],
     "sv": ["Läser spelplanen automatiskt från en skärmbild (OCR)",
            "Lösningar sorterade efter poäng, med exakt placering",
            "Visar hur många brickor som är kvar i spelet totalt – i påsen plus hos motståndaren",
            "Uppdaterade ordlistor", "Ingen reklam",
-           "Gratis att prova, med Pro Lifetime och Pro-prenumeration"],
+           "Gratis att använda så länge du vill – Pro visar även de 6 bästa orden"],
     "no": ["Leser brettet automatisk fra et skjermbilde (OCR)",
            "Løsninger sortert etter poeng, med nøyaktig plassering",
            "Viser hvor mange brikker som er igjen i spillet totalt – i posen pluss hos motstanderen",
            "Oppdaterte ordlister", "Ingen reklame",
-           "Gratis å prøve, med Pro Lifetime og Pro-abonnement"],
+           "Gratis å bruke så lenge du vil – Pro viser også de 6 beste ordene"],
 }
 
 PRIVACY_FAQ = {
@@ -290,11 +290,11 @@ PRIVACY_FAQ = {
 }
 
 PRICE_FAQ = {
-    "en": "It is free to download and try. Upgrade to Pro Lifetime – one payment, no subscription – or to Pro Subscription.",
-    "da": "Den er gratis at hente og prøve. Opgradér til Pro Lifetime – én betaling, intet abonnement – eller til Pro-abonnement.",
-    "nl": "Je kunt de app gratis downloaden en proberen. Upgrade naar Pro Lifetime – één betaling, geen abonnement – of naar een Pro-abonnement.",
-    "sv": "Den är gratis att ladda ned och prova. Uppgradera till Pro Lifetime – en betalning, ingen prenumeration – eller till Pro-prenumeration.",
-    "no": "Den er gratis å laste ned og prøve. Oppgrader til Pro Lifetime – én betaling, ikke noe abonnement – eller til Pro-abonnement.",
+    "en": "Yes. You can use the free version for as long as you like – it never expires. The only difference is that the 6 highest-scoring words are reserved for Pro, but you will still find plenty of good words in the free version. If you want the top words too, choose Pro Lifetime (one payment, no subscription) or Pro Subscription.",
+    "da": "Ja. Du kan bruge den gratis version, så længe du vil – den udløber aldrig. Den eneste forskel er, at de 6 ord med flest point er forbeholdt Pro, men du finder stadig masser af gode ord i den gratis version. Vil du også se de bedste ord, kan du vælge Pro Lifetime (én betaling, intet abonnement) eller Pro-abonnement.",
+    "nl": "Ja. Je kunt de gratis versie zo lang gebruiken als je wilt – hij verloopt nooit. Het enige verschil is dat de 6 woorden met de meeste punten voor Pro zijn, maar ook in de gratis versie vind je genoeg goede woorden. Wil je de beste woorden ook zien, kies dan Pro Lifetime (één betaling, geen abonnement) of een Pro-abonnement.",
+    "sv": "Ja. Du kan använda gratisversionen så länge du vill – den går aldrig ut. Den enda skillnaden är att de 6 orden med flest poäng är förbehållna Pro, men du hittar ändå massor av bra ord i gratisversionen. Vill du se de bästa orden också kan du välja Pro Lifetime (en betalning, ingen prenumeration) eller Pro-prenumeration.",
+    "no": "Ja. Du kan bruke gratisversjonen så lenge du vil – den utløper aldri. Den eneste forskjellen er at de 6 ordene med flest poeng er forbeholdt Pro, men du finner likevel mange gode ord i gratisversjonen. Vil du se de beste ordene også, kan du velge Pro Lifetime (én betaling, ikke noe abonnement) eller Pro-abonnement.",
 }
 
 APP_ORDER = ["wordfeud-solver", "words-with-friends-solver", "scrabble-go-cheat"]
