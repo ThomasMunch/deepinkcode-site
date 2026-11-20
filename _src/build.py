@@ -195,7 +195,7 @@ def build_home(lang):
 <section class="apps" id="apps">
 {cards}</section>
 {gaffergrid}</main>
-""" + footer(lang)
+""" + footer(lang, script=True)
     write(lang, "", html)
 
 def build_app(lang, slug):
