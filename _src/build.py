@@ -10,9 +10,12 @@ from html import escape
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content import LANG_ORDER, LANGS, HOME, SUPPORT, FEATURES, PRIVACY_FAQ, PRICE_FAQ, APP_ORDER, APPS, GAFFERGRID
+from wordlists import WORDLISTS
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://deepinkcode.com"
+WORDLIST_PATH = "wordfeud-words/"
+WORDLIST_DATA = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "wordlist_data.json"), encoding="utf-8"))
 YEAR = "2026"
 SHOT_W = {"wordfeud": 462, "wwf": 462, "scrabble": 460}
 # Cache-busting: the query changes whenever style.css changes (line endings normalised so Windows and Linux agree).
@@ -231,6 +234,8 @@ def build_app(lang, slug):
     others = "\n".join(f'      <li><a href="{url(lang, s + "/")}">{APPS[s]["name"]}</a></li>'
                        for s in APP_ORDER if s != slug)
     note = f'\n    <p class="note">{e(c["note"])}</p>' if c["note"] else "\n    "
+    wordlist_link = (f'<p class="wordlist-link"><a href="{url(lang, WORDLIST_PATH)}">{e(WORDLISTS[lang]["link"])}</a></p>\n'
+                     if slug == "wordfeud-solver" else "")
     html = head(lang, c["title"], c["desc"], path, f"/assets/img/apps/{shot_base}-1.webp", ld, a["as"]) + header(lang, path, None) + f"""<main class="wrap app app-{a['cls']}">
 <section class="app-hero">
   <img class="app-icon" src="/assets/img/apps/{a['img']}-icon.webp" alt="{a['name']} {L['icon']}" width="128" height="128">
@@ -268,7 +273,7 @@ def build_app(lang, slug):
   <h2>{L['faq']}</h2>
 {faq}
 </section>
-<section class="app-section more-apps">
+{wordlist_link}<section class="app-section more-apps">
   <h2>{L['more']}</h2>
     <ul>
 {others}
@@ -277,6 +282,55 @@ def build_app(lang, slug):
 <p class="note disclaimer">{e(c['disclaimer'])}</p>
 </main>
 """ + footer(lang, script=True)
+    write(lang, path, html)
+
+def chips(words, unit):
+    return "\n".join(f'    <li><span class="w">{e(w)}</span><span class="pts">{p}&nbsp;{unit}</span></li>' for w, p in words)
+
+def build_wordlist(lang):
+    T, D, L = WORDLISTS[lang], WORDLIST_DATA[lang], LANGS[lang]
+    a, path = APPS["wordfeud-solver"], WORDLIST_PATH
+    two = sorted(D["two"])
+    sections = [f"""<section class="app-section">
+  <h2>{e(T['two_h2'].format(n=len(two)))}</h2>
+  <ul class="wordgrid">
+{chips(two, e(T['pts']))}
+  </ul>
+</section>"""]
+    for b in D["letters"]:
+        sections.append(f"""<section class="app-section">
+  <h2>{e(T['letter_h2'].format(L=b['letter'], p=b['points']))}</h2>
+  <p class="note">{e(T['letter_sub'])}</p>
+  <ul class="wordgrid">
+{chips(b['words'], e(T['pts']))}
+  </ul>
+</section>""")
+    tips = "\n".join(f"      <li>{e(t)}</li>" for t in T["tips"])
+    ld = {"@context": "https://schema.org", "@type": "Article", "headline": T["h1"], "description": T["desc"],
+          "inLanguage": L["html"], "url": BASE + url(lang, path),
+          "publisher": {"@type": "Organization", "name": "DeepInkCode", "url": BASE + "/"}}
+    shot = a["shots_localized"].get(lang, a["img"])
+    html = head(lang, T["title"], T["desc"], path, f"/assets/img/apps/{shot}-1.webp", ld) + header(lang, path, None) + f"""<main class="wrap app app-{a['cls']} wordlist">
+<section class="page">
+  <h1>{e(T['h1'])}</h1>
+  <p class="lead">{e(T['intro'])}</p>
+</section>
+{chr(10).join(sections)}
+<section class="app-section">
+  <h2>{e(T['tips_h2'])}</h2>
+  <ul class="checks">
+{tips}
+  </ul>
+</section>
+<section class="app-section wl-cta">
+  <h2>{e(T['cta_h2'])}</h2>
+  <div class="card-head"><img src="/assets/img/apps/{a['img']}-icon.webp" alt="" width="56" height="56"><p>{e(T['cta'])}</p></div>
+  {badges(lang, a, "wordlist")}
+  <p><a href="{url(lang, 'wordfeud-solver/')}">{e(T['cta_link'])}</a></p>
+</section>
+<p class="note disclaimer">{e(T['source'])} {e(a[lang]['disclaimer'])}</p>
+</main>
+""" + footer(lang)
     write(lang, path, html)
 
 def build_support(lang):
@@ -315,7 +369,7 @@ def patch_css_links():
         open(p, "w", encoding="utf-8").write(html)
 
 def build_sitemap():
-    paths = [""] + [s + "/" for s in APP_ORDER] + ["support/"]
+    paths = [""] + [s + "/" for s in APP_ORDER] + [WORDLIST_PATH, "support/"]
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for p in paths:
@@ -332,9 +386,10 @@ if __name__ == "__main__":
     for lang in LANG_ORDER:
         build_home(lang)
         build_support(lang)
+        build_wordlist(lang)
         for slug in APP_ORDER:
             build_app(lang, slug)
     patch_privacy()
     patch_css_links()
     build_sitemap()
-    print("built", len(LANG_ORDER) * (2 + len(APP_ORDER)), "pages")
+    print("built", len(LANG_ORDER) * (3 + len(APP_ORDER)), "pages")

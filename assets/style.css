@@ -265,3 +265,13 @@ body { overflow-x: clip; }
   .tile { width: 34px; height: 34px; font-size: 1.1rem; }
   .hero-bg { -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 40%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse 90% 60% at 50% 40%, #000 30%, transparent 75%); }
 }
+
+/* Word-list pages */
+.wordlist .page { padding-bottom: 8px; }
+.wordgrid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.wordgrid li { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; }
+.wordgrid .w { font-weight: 700; letter-spacing: .04em; }
+.wordgrid .pts { color: var(--muted); font-size: .8rem; }
+.wordlist .wl-cta { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--app); border-radius: 12px; padding: 20px 22px; }
+.wordlist .wl-cta .card-head p { margin: 0; }
+.wordlist-link { margin: 8px 0 0; font-weight: 600; }
