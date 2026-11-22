@@ -85,6 +85,7 @@ def header(lang, path, current):
     <a class="brand" href="{url(lang, '')}"><img src="/assets/img/logo-wide.svg" alt="DeepInkCode" width="222" height="58"></a>
     <nav class="nav">
       <a href="{url(lang, '#apps')}"{cur('apps')}>{L['nav_apps']}</a>
+      <a href="{url(lang, WORDLIST_PATH)}"{cur('words')}>{L['nav_words']}</a>
       <a href="{GAFFERGRID[lang]['url']}" rel="noopener">GafferGrid</a>
       <a href="{url(lang, 'support/')}"{cur('support')}>{L['nav_support']}</a>
       <a href="{L['privacy_url']}">{L['nav_privacy']}</a>
@@ -142,11 +143,13 @@ def build_home(lang):
     cards = ""
     for slug in APP_ORDER:
         a = APPS[slug]
+        card_extra = (f'\n    <a class="more more-sub" href="{url(lang, WORDLIST_PATH)}">{e(WORDLISTS[lang]["link"])}</a>'
+                      if slug == "wordfeud-solver" else "")
         cards += f"""  <article class="card card-{a['cls']}">
     <div class="card-head"><img src="/assets/img/apps/{a['img']}-icon.webp" alt="" width="64" height="64"><h2>{a['name']}</h2></div>
     <p>{e(a[lang]['tagline'])}</p>
     {badges(lang, a, "home")}
-    <a class="more" href="{url(lang, slug + '/')}">{L['read_more']}</a>
+    <a class="more" href="{url(lang, slug + '/')}">{L['read_more']}</a>{card_extra}
   </article>
 """
     tiles = "".join(f'<span class="tile">{ch}<sub>{pt}</sub></span>' for ch, pt in
@@ -247,7 +250,7 @@ def build_app(lang, slug):
 </section>
 <p class="lead app-intro">{e(c['intro'])}</p>
 <p class="app-intro">{e(c['extra'])}</p>
-
+{wordlist_link}
 <section class="app-section">
   <h2>{L['screenshots']}</h2>
   <ul class="gallery">
@@ -273,7 +276,7 @@ def build_app(lang, slug):
   <h2>{L['faq']}</h2>
 {faq}
 </section>
-{wordlist_link}<section class="app-section more-apps">
+<section class="app-section more-apps">
   <h2>{L['more']}</h2>
     <ul>
 {others}
@@ -310,7 +313,7 @@ def build_wordlist(lang):
           "inLanguage": L["html"], "url": BASE + url(lang, path),
           "publisher": {"@type": "Organization", "name": "DeepInkCode", "url": BASE + "/"}}
     shot = a["shots_localized"].get(lang, a["img"])
-    html = head(lang, T["title"], T["desc"], path, f"/assets/img/apps/{shot}-1.webp", ld) + header(lang, path, None) + f"""<main class="wrap app app-{a['cls']} wordlist">
+    html = head(lang, T["title"], T["desc"], path, f"/assets/img/apps/{shot}-1.webp", ld) + header(lang, path, "words") + f"""<main class="wrap app app-{a['cls']} wordlist">
 <section class="page">
   <h1>{e(T['h1'])}</h1>
   <p class="lead">{e(T['intro'])}</p>
